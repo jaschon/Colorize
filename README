@@ -1,6 +1,85 @@
 
+###############
+# yellowbrown #
+###############
 
-*Remind me to Finish this....
+- A (really really) simple way to add ANSI styles and colors to your python scripts.
+
+################
+# REQUIREMENTS #
+################
+
+Tested on:
+- Python 2.7
+
+#########
+# USAGE #
+#########
+
+colorize('my string', <color name>, <background color name>, <style name>, <align type>, <align width>)
+
+COLOR NAMES
+- 'white' #More Like a Light Gray
+- 'red'
+- 'yellow'
+- 'green'
+- 'blue'
+- 'cyan'
+- 'magenta'
+- 'black'
+- 'normal' #Default
+
+BACKGROUND COLOR NAMES
+- 'white'
+- 'red'
+- 'yellow'
+- 'green'
+- 'blue'
+- 'cyan'
+- 'magenta'
+- 'black'
+- 'normal' #Default
+
+STYLE NAMES
+- 'normal' #Default
+- 'bold'
+- 'dim'
+- 'italic' #Doesn't Work On Most Setups
+- 'underline'
+- 'inverse' #Reverses Color and Background
+- 'strike'
+- 'reset' #Resets Color/Background/Style to Default
+
+ALIGN TYPES
+- 'left'
+- 'right'
+- 'center'
+
+
+############
+# EXAMPLES #
+############
+
+print colorize("my string", 'red', 'yellow', 'bold', 'center', 10) 
+#red text, yellow background, bold and centered with a width of 10
+
+print colorize("my string", 'cyan')
+#cyan text
+
+print colorize("my string", 'blue', 'normal', 'inverse')
+#blue background with white text
+
+
+########
+# TEST #
+########
+
+- Use Test Function To Display All Colors, Backgrounds and Styles
+
+printColorTable()
+
+
+
 
 
 
