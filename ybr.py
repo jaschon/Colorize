@@ -3,9 +3,11 @@
 from sys import stdout
 
 __author__ = "Jason Rebuck"
-__version__ = "0.05"
+__copyright__ = "2011-2012"
+__version__ = "0.07"
 __doc__ = "VERY Basic functions for printing colored text in the Terminal"
 
+#ANSI Codes
 FGcolors = {
 "black" : "\033[30m",
 "red" : "\033[31m",
@@ -41,7 +43,7 @@ STYLEcolors = {
 "normal" : "",
 }
 
-
+#Main Function
 def colorize(text, fg="normal", bg="normal", style="normal", align="left", alignWidth=0):
     """Take Text Input and Return Text with ANSI Color/Style Codes Added"""
     width = alignWidth or len(text) #if no width given, use the text length
@@ -53,6 +55,18 @@ def colorize(text, fg="normal", bg="normal", style="normal", align="left", align
         alignedText = "{text:<{width}}".format(text = text, width = width)
     return "{background}{foreground}{style}{text}{reset}".format(background = BGcolors[bg], foreground = FGcolors[fg], style = STYLEcolors[style], text = alignedText, reset = STYLEcolors['reset']) #return throw all values into a string and return
 
+#Shortcuts
+def bold(text, color='normal'):
+    return colorize(text, color, 'normal', 'bold')
+
+def underline(text, color='normal'):
+    return colorize(text, color, 'normal', 'underline')
+
+def inverse(text, color='black'):
+    width = len(str(text)) + 2
+    return colorize(text, color, 'normal', 'inverse', 'center', width)
+
+#Test Function
 def printColorTable():
     """Print a Table of All Styles and Colors"""
     #filter out non-colored/styled items
@@ -75,6 +89,12 @@ def printColorTable():
            
 
 if __name__ == "__main__":
+
+    print ""
+    print bold("Bold Test", 'red')
+    print underline("Underline Test", 'blue')
+    print inverse("Inverse Test", 'cyan')
+
     printColorTable()
 
 
