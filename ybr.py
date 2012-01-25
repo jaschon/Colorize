@@ -5,7 +5,6 @@ from sys import stdout
 __author__ = "Jason Rebuck"
 __copyright__ = "2011-2012"
 __version__ = "0.07"
-__doc__ = "VERY Basic functions for printing colored text in the Terminal"
 
 #ANSI Codes
 FGcolors = {
