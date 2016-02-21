@@ -4,7 +4,7 @@ from sys import stdout
 
 __author__ = "Jason Rebuck"
 __copyright__ = "2011-2016"
-__version__ = "0.10"
+__version__ = "0.11"
 
 
 class Colorizer:
@@ -45,9 +45,18 @@ class Colorizer:
 	"strike" : "\033[9m",
 	"normal" : "",
 	}
+
+        #Hold Text
+        text = ''
               
 	def __init__(self, text='', fg="normal", bg="normal", style="normal", align="left", alignWidth=0):
-            print self._colorize(text, fg, bg, style, align, alignWidth)
+            self.text = self._colorize(text, fg, bg, style, align, alignWidth)
+
+        def get(self):
+            return self.text
+
+        def show(self):
+            print self.text
 
 	#Main Function
 	def _colorize(self, text, fg="normal", bg="normal", style="normal", align="left", alignWidth=0):
@@ -71,33 +80,33 @@ class Colorizer:
 class Bold(Colorizer):
     """Output Text In Bold"""
     def __init__(self, text='', color='normal'):
-        print self._colorize(text, color, 'normal', 'bold')
+        self.text = self._colorize(text, color, 'normal', 'bold')
 
 class Italic(Colorizer):
     """Output Text In Italics"""
     def __init__(self, text='', color='normal'):
-        print self._colorize(text, color, 'normal', 'italic')
+        self.text = self._colorize(text, color, 'normal', 'italic')
 
 class Strike(Colorizer):
     """Output Text In Strike Out"""
     def __init__(self, text='', color='normal'):
-        print self._colorize(text, color, 'normal', 'strike')
+        self.text = self._colorize(text, color, 'normal', 'strike')
 
 class Dim(Colorizer):
     """Output Text In Dim"""
     def __init__(self, text='', color='normal'):
-        print self._colorize(text, color, 'normal', 'dim')
+        self.text = self._colorize(text, color, 'normal', 'dim')
 
 class Underline(Colorizer):
     """Output Text Underlined"""
     def __init__(self, text='', color='normal'):
-        print self._colorize(text, color, 'normal', 'underline')
+        self.text = self._colorize(text, color, 'normal', 'underline')
 
 class Inverse(Colorizer):
     """Output Text Inversed"""
     def __init__(self, text='', fg='black', bg='normal'):
         width = len(str(text)) + 2
-        print self._colorize(text, fg, bg, 'inverse', 'center', width)
+        self.text = self._colorize(text, fg, bg, 'inverse', 'center', width)
 
 # Test Class
 class TestColorTable(Colorizer):
@@ -131,12 +140,13 @@ if __name__ == "__main__":
 
     # Run Some Tests...
     print ''
-    Bold("Test Bold")
-    Strike("Test Strike", 'red')
-    Dim("Test Dim", 'cyan')
-    Italic("Test Italic", 'magenta')
-    Underline("Test Underline", 'green')
-    Inverse("Test Inverse", 'blue', 'red')
+    print Bold("Test Bold Returned").get()
+    Bold("Test Bold Printed", "magenta").show()
+    Strike("Test Strike", 'red').show()
+    Dim("Test Dim", 'cyan').show()
+    Italic("Test Italic", 'magenta').show()
+    Underline("Test Underline", 'green').show()
+    Inverse("Test Inverse", 'blue', 'red').show()
 
     #Print Test Table
     TestColorTable()
