@@ -3,7 +3,7 @@
 # Colorize #
 ###############
 
-- A way to add ANSI styles and colors to your python scripts.
+- A simple way to add ANSI styles and colors to your python scripts.
 
 ################
 # REQUIREMENTS #
@@ -59,14 +59,35 @@ ALIGN TYPES
 # EXAMPLES #
 ############
 
-Colorize("my string", 'red', 'yellow', 'bold', 'center', 10) 
-#red text, yellow background, bold and centered with a width of 10
+c = Colorize("my string", 'red', 'yellow', 'bold', 'center', 10) 
+# Red text, yellow background, bold and centered with a width of 10. 
+# No Output. Nothing Returned.
+ 
+print c.get()
+# Use .get() to return colorized text string without printing it
 
-Bold("my string", 'cyan')
-#bold cyan text
+c.show()
+# Use .show() to print colorized text string
 
-Inverse("my string", 'blue', 'white')
-#blue background with white text
+####################
+# SHORTCUT CLASSES #
+####################
+
+Bold("my string", 'color').show()
+#Bold
+
+Italic("my string", 'color').show()
+#Italic
+
+Strike("my string", 'color').show()
+#Strike Out 
+
+Dim("my string", 'color').show()
+#Dim Colors
+
+Inverse("my string", 'color', 'bg color').show()
+#Inverse Text/Background
+
 
 ########
 # TEST #
