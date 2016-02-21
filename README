@@ -16,7 +16,9 @@ Tested on:
 # USAGE #
 #########
 
-Colorize('my string', <color name>, <background color name>, <style name>, <align type>, <align width>)
+c = Colorize('my string', <color name>, <background color name>, <style name>, <align type>, <align width>)
+c.get() # Returns Colorized String
+c.show() # Prints Colorized String
 
 COLOR NAMES
 - 'white' #More Like a Light Gray
