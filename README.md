@@ -21,6 +21,7 @@ c.show() # Prints Colorized String
 ```
 
 ### COLOR NAMES
+
 - 'white' #More Like a Light Gray
 - 'red'
 - 'yellow'
@@ -32,6 +33,7 @@ c.show() # Prints Colorized String
 - 'normal' #Default
 
 ### BACKGROUND COLOR NAMES
+
 - 'white'
 - 'red'
 - 'yellow'
@@ -43,6 +45,7 @@ c.show() # Prints Colorized String
 - 'normal' #Default
 
 ### STYLE NAMES
+
 - 'normal' #Default
 - 'bold'
 - 'dim'
@@ -53,6 +56,7 @@ c.show() # Prints Colorized String
 - 'reset' #Resets Color/Background/Style to Default
 
 ### ALIGN TYPES
+
 - 'left'
 - 'right'
 - 'center'
@@ -64,20 +68,20 @@ c.show() # Prints Colorized String
 c = Colorize("my string", 'red', 'yellow', 'bold', 'center', 10)
 ```
 
-* Red text, yellow background, bold and centered with a width of 10. *
-* No Output. Nothing Returned. *
+*Red text, yellow background, bold and centered with a width of 10.*
+*No Output. Nothing Returned.*
 
 ```
 print c.get()
 ```
 
-* Use .get() to return colorized text string without printing it *
+*Use .get() to return colorized text string without printing it*
 
 ```
 c.show()
 ```
 
-* Use .show() to print colorized text string *
+*Use .show() to print colorized text string*
 
 
 ### SHORTCUT CLASSES
@@ -86,7 +90,7 @@ c.show()
 Bold("my string", 'color').show()
 ```
 
-** Bold **
+*Bold*
 
 ```
 Italic("my string", 'color').show()
@@ -98,25 +102,25 @@ Italic("my string", 'color').show()
 Strike("my string", 'color').show()
 ```
 
--- Strike Out --
+*Strike Out*
 
 ```
 Dim("my string", 'color').show()
 ```
 
-* Dim Colors *
+*Dim Colors*
 
 ```
 Inverse("my string", 'color', 'bg color').show()
 ```
 
-* Inverse Text/Background *
+*Inverse Text/Background*
 
 
 
 ### TEST #
 
-* Use Test Function To Display All Colors, Backgrounds and Styles *
+*Use Test Function To Display All Colors, Backgrounds and Styles*
 
 ```
 TestColorTable()
