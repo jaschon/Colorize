@@ -1,26 +1,26 @@
 
-###############
+
 # Colorize #
-###############
 
-- A simple way to add ANSI styles and colors to your terminal python scripts.
+* A simple way to add ANSI styles and colors to your terminal python scripts. *
 
-################
-# REQUIREMENTS #
-################
+## REQUIREMENTS ##
 
-Tested on:
+
+#### Tested on:
+
 - Python 2.7
 
-#########
-# USAGE #
-#########
 
+## USAGE ##
+
+```
 c = Colorize('my string', <color name>, <background color name>, <style name>, <align type>, <align width>)
 c.get() # Returns Colorized String
 c.show() # Prints Colorized String
+```
 
-COLOR NAMES
+### COLOR NAMES
 - 'white' #More Like a Light Gray
 - 'red'
 - 'yellow'
@@ -31,7 +31,7 @@ COLOR NAMES
 - 'black'
 - 'normal' #Default
 
-BACKGROUND COLOR NAMES
+### BACKGROUND COLOR NAMES
 - 'white'
 - 'red'
 - 'yellow'
@@ -42,7 +42,7 @@ BACKGROUND COLOR NAMES
 - 'black'
 - 'normal' #Default
 
-STYLE NAMES
+### STYLE NAMES
 - 'normal' #Default
 - 'bold'
 - 'dim'
@@ -52,52 +52,75 @@ STYLE NAMES
 - 'strike'
 - 'reset' #Resets Color/Background/Style to Default
 
-ALIGN TYPES
+### ALIGN TYPES
 - 'left'
 - 'right'
 - 'center'
 
-############
-# EXAMPLES #
-############
 
-c = Colorize("my string", 'red', 'yellow', 'bold', 'center', 10) 
-# Red text, yellow background, bold and centered with a width of 10. 
-# No Output. Nothing Returned.
- 
+### EXAMPLES
+
+```
+c = Colorize("my string", 'red', 'yellow', 'bold', 'center', 10)
+```
+
+* Red text, yellow background, bold and centered with a width of 10. *
+* No Output. Nothing Returned. *
+
+```
 print c.get()
-# Use .get() to return colorized text string without printing it
+```
 
+* Use .get() to return colorized text string without printing it *
+
+```
 c.show()
-# Use .show() to print colorized text string
+```
 
-####################
-# SHORTCUT CLASSES #
-####################
+* Use .show() to print colorized text string *
 
+
+### SHORTCUT CLASSES
+
+```
 Bold("my string", 'color').show()
-#Bold
+```
 
+** Bold **
+
+```
 Italic("my string", 'color').show()
-#Italic
+```
 
+*Italic*
+
+```
 Strike("my string", 'color').show()
-#Strike Out 
+```
 
+-- Strike Out --
+
+```
 Dim("my string", 'color').show()
-#Dim Colors
+```
 
+* Dim Colors *
+
+```
 Inverse("my string", 'color', 'bg color').show()
-#Inverse Text/Background
+```
+
+* Inverse Text/Background *
 
 
-########
-# TEST #
-########
 
-- Use Test Function To Display All Colors, Backgrounds and Styles
+### TEST #
 
+* Use Test Function To Display All Colors, Backgrounds and Styles *
+
+```
 TestColorTable()
+```
 
 
 
